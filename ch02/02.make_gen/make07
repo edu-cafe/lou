@@ -1,0 +1,15 @@
+OBJS = test1.o test2.o test3.o
+#CC = gcc
+CFLAGS = -g -O2 -Wall
+
+test: $(OBJS)
+	$(CC) -o $@ $^
+
+.c.o:
+	$(CC) -c $(CFLAGS) $<
+	
+clean:
+	rm $(OBJS) test
+
+dep:
+	gccmakedep test1.c test2.c test3.c

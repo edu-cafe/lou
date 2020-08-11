@@ -1,0 +1,37 @@
+CC = gcc
+CFLAGS = -Wall -O2 -g
+
+SRCS = test1.c test2.c test3.c exam2.c exam3.c
+SRCS1 = test1.c test2.c test3.c
+SRCS2 = exam2.c test2.c
+SRCS3 = exam3.c test3.c
+
+OBJS = $(SRCS:.c=.o)
+OBJS1 = $(SRCS1:.c=.o)
+OBJS2 = $(SRCS2:.c=.o)
+OBJS3= $(SRCS3:.c=.o)
+
+TARGET1 = exam1
+TARGET2 = exam2
+TARGET3 = exam3
+TARGETS = $(TARGET1) $(TARGET2) $(TARGET3)
+
+#all: $(TARGET1) $(TARGET2) $(TARGET3)
+all: $(TARGETS)
+
+$(TARGET1): $(OBJS1)
+	$(CC) -o $@ $^
+
+$(TARGET2): $(OBJS2)
+	$(CC) -o $@ $^
+
+$(TARGET3): $(OBJS3)
+	$(CC) -o $@ $^
+
+
+clean:
+	rm $(OBJS)
+	rm $(TARGETS)
+
+dep:
+	gccmakedep $(SRCS)

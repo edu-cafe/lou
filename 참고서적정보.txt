@@ -1,0 +1,2 @@
+CMake Cookbook: Building, testing, and packaging modular software with modern CMake
+Radovan Bast and Roberto Di Remigo, Packt

@@ -1,0 +1,15 @@
+#CC = gcc
+CFLAGS = -g -O2 -Wall
+SRCS = task1.c task2.c task3.c
+OUTS = $(SRCS:.c=)
+
+test: $(OUTS)
+
+.c:
+	$(CC) $(CFLAGS) $< -o $@
+	
+clean:
+	rm $(OUTS)
+
+dep:
+	gccmakedep $(SRCS)

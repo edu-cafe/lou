@@ -1,0 +1,7 @@
+PROJECT ( myprj1 )
+#project ( myprj1 )
+#PROJECT ( "My Project1" )
+CMAKE_MINIMUM_REQUIRED ( VERSION 3.5 )
+SET (SRCS test1.c test2.c test3.c)
+ADD_EXECUTABLE ( mytest ${SRCS} )
+MESSAGE ( ${CMAKE_PROJECT_NAME} )

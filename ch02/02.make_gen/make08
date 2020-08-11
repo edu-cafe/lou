@@ -1,0 +1,16 @@
+#CC = gcc
+CFLAGS = -g -Wall -O2
+SRCS = test1.c test2.c test3.c
+OBJS = $(SRCS:.c=.o)
+
+test: $(OBJS)
+	$(CC) -o $@ $^
+
+.c.o:
+	$(CC) -c $(CFLAGS) $<
+	
+clean:
+	rm $(OBJS) test
+
+dep:
+	gccmakedep $(SRCS)

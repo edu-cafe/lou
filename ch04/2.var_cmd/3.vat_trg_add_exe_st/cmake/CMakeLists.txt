@@ -1,0 +1,14 @@
+PROJECT ( myprj2 )
+CMAKE_MINIMUM_REQUIRED ( VERSION 3.5 )
+SET ( CMAKE_BUILD_TYPE Debug )
+SET ( CMAKE_VERBOSE_MAKEFILE true )
+MESSAGE ( ${CMAKE_PROJECT_NAME} )
+
+SET ( SRCS1 test1.c test2.c test3.c )
+ADD_EXECUTABLE ( exam1 ${SRCS1} )
+
+SET ( SRCS2 exam2.c test2.c )
+ADD_EXECUTABLE ( exam2 ${SRCS2} )
+
+SET ( SRCS3 exam3.c test3.c )
+ADD_EXECUTABLE ( exam3 ${SRCS3} )
